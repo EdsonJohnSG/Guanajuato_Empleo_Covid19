@@ -24,7 +24,7 @@ brks_mont <- df_month_2$Date
 
 
 # plot
-ggplot(df_month_2, aes(x=Date)) +
+imagen <- ggplot(df_month_2, aes(x=Date)) +
   geom_line(aes(y=Guanajuato, col="Guanajuato")) + geom_line(aes(y=Nacional, col="Nacional")) +
   labs(title = "Comparación de número de empleos en Guanajuato y a nivel Nacional", x= "Meses",
        subtitle = "Junio 2019 a Julio 2020",
@@ -34,3 +34,7 @@ ggplot(df_month_2, aes(x=Date)) +
   scale_color_manual(name="", values = c("Nacional"="#00ba38", "Guanajuato"="#FF9999","Queretaro"="#F0E442","CDMX"="#9999CC")) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5), panel.grid.minor = element_blank()) +
   scale_y_continuous(breaks = seq(500000,2000000,1000000))
+
+print(imagen)
+
+enc2utf8()
